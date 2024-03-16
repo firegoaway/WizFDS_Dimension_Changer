@@ -1,19 +1,21 @@
 ﻿#NoEnv
 #SingleInstance Force
-SetWorkingDir %A_ScriptDir%
 
 ;Gui +AlwaysOnTop ;Поверх всех окон
 Gui Add, Edit, x20 y20 w300 h25 vInputFile, Select .fds file
 Gui Add, Button, x330 y20 w80 h25 gChooseFile, Browse
 Gui Add, Button, x20 y60 w100 h30 gProcessFile, Process
 Gui Add, Button, x130 y60 w100 h30 gExit, Exit
-Gui Show, w450 h120, WizFDS Divider
+Gui Show, w450 h120, WizFDS Dimension Changer
 return
 
 ChooseFile:
-    FileSelectFile, inputFile, 3, , Select .fds file, FDS files (*.fds)
-    if (inputFile != "")
+    FileSelectFile, inputFile, 3, , Select .fds file, FDS file (*.fds)
+    if (inputFile != "") {
         GuiControl, , InputFile, % inputFile
+		outputPath := RegExReplace(inputFile, "([^\\]+)$", "") ; Extract the folder path from the input file
+		SetWorkingDir %outputPath% ; Set the working directory to the output folder
+	}
 return
 
 ProcessFile:
@@ -51,10 +53,10 @@ ProcessFile:
                 SURF_ID := coords7
 
                 ; Format the coordinates with the desired decimal precision
-                formattedCoords := Format("{:0.9f},{:0.9f},{:0.9f},{:0.9f},{:0.3f},{:0.3f}", X1, X2, Y1, Y2, Z1, Z2)
+                formattedCoords := Format("{:0.9f}, {:0.9f}, {:0.9f}, {:0.9f}, {:0.3f}, {:0.3f}", X1, X2, Y1, Y2, Z1, Z2)
 
                 ; Construct the new line with the rearranged coordinates
-                newLine := "&OBST ID='OBST" . counter . "', XB=" . formattedCoords . ", SURF_ID='" . SURF_ID . ""
+                newLine := "&OBST ID='OBST" . counter . "', XB=" . formattedCoords . "," . SURF_ID . ""
 
                 ; Increment the counter
                 counter++
@@ -69,11 +71,11 @@ ProcessFile:
             }
         }
 
-        MsgBox, , WizFDS Divider, Processing complete. Output file: %outputFile%
+        MsgBox, , WizFDS Dimension Changer, Processing complete. Output file: %outputFile%
     }
     else
     {
-        MsgBox, , WizFDS Divider, The selected file does not exist.
+        MsgBox, , WizFDS Dimension Changer, The selected file does not exist.
     }
 return
 
