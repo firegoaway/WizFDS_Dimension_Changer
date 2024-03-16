@@ -30,6 +30,8 @@
 |---------|---------|
 |	1	|	Скачайте последнюю версию **WizFDS_Dimension_Changer.exe** в разделе [Releases](https://github.com/firegoaway/WizFDS_Dimension_Changer/releases);	|
 |	2	|	Запустите **WizFDS_Dimension_Changer.exe**.	|
+|	3	|	Нажмите **"Browse"** и выберите файл .fds, создайнный в [WizFDS](https://wizfds.com/)	|
+|	4	|	Нажмите **Process"**	|
 
 ## Профилактика вирусов и угроз
 - WizFDS Divider предоставляется "как есть".
