@@ -27,12 +27,8 @@
 ## Как установить и пользоваться
 |	№ п/п	|	Действие	|
 |---------|---------|
-|	1	| Скачайте репозиторий в формате ZIP (зелёная кнопка "Code" -> Download ZIP);	|
-|	2	| Разархивируйте в любое удобное место;	|
-|	3	| Скачайте последнюю версию **Pomenat+ 3.exe** в разделе [Releases](https://github.com/firegoaway/Pomenat_plus_3/releases);	|
-|	4	| Поместите скачаный файл в ранее разархивированную папку;	|
-|	5	| Запустите **Pomenat+ 3.exe**;	|
-|	6	| Проследуйте инструкции.	|
+|	1	|	Скачайте последнюю версию **WizFDS_Dimension_Changer.exe** в разделе [Releases](https://github.com/firegoaway/WizFDS_Dimension_Changer/releases);	|
+|	2	|	Запустите **WizFDS_Dimension_Changer.exe**.	|
 
 ## Профилактика вирусов и угроз
 - WizFDS Divider предоставляется "как есть".
