@@ -1,4 +1,4 @@
-# WizFDS Divider
+# WizFDS Dimension Changer
 
 > Язык программы: **AHK**
 
